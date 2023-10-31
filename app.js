@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-app.use(express.urlencoded({extended: true}));
+
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
@@ -10,6 +11,6 @@ app.get('/', (req, res) => {
   res.send("done");
 });
 
-app.listen(() => {
-  console.log('server connected');
+app.listen(3000, () => {
+  console.log('Server connected on port 3000');
 });
