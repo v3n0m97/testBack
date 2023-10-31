@@ -17,9 +17,11 @@ app.use((err, req, res, next) => {
 
 // Handle GET requests to the root URL
 router.get("/", (req, res) => {
-  console.log(req.header);
-  console.log(req.socket.remoteAddress);
-  console.log(req.connection);
+  console.log(req.ip);
+  console.log(req.headers);
+  console.log(req.connection.remoteAddress);
+  console.log(req.headers['x-powered-by']);
+  req.headers['x-forwarded-for'];
   res.send("Welcome to the Webhook Server!");
 });
 
