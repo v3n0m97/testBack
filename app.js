@@ -11,6 +11,11 @@ app.get('/', (req, res) => {
   res.send("done");
 });
 
+app.get('/test', (req, res) => {
+  console.log('Test console log');
+  res.send("Test route executed.");
+});
+
 app.listen(3000, () => {
   console.log('Server connected on port 3000');
 });
